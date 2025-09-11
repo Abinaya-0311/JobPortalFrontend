@@ -106,7 +106,7 @@ export default function PostJobs() {
   const fetchData = async () => {
     if (jobId) {
       const res = await fetch(
-        `http://localhost:8080/api/jobs/findById/${jobId}`,
+        `${API_URL}/jobs/findById/${jobId}`,
         {
           method: "GET",
           headers: {

@@ -22,46 +22,46 @@ function Login() {
  
 
   // Handle Google login success
-  const handleGoogleSuccess = async (credential) => {
-    try {
-      const response = await fetch(
-        `${API_URL}/auth/google-login`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ token: credential }),
-        },
-      );
+  // const handleGoogleSuccess = async (credential) => {
+  //   try {
+  //     const response = await fetch(
+  //       `${API_URL}/auth/google-login`,
+  //       {
+  //         method: "POST",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify({ token: credential }),
+  //       },
+  //     );
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (response.ok && data.token) {
-        localStorage.setItem("auth-token", data.token);
-        localStorage.setItem("role", data.role);
-        localStorage.setItem("id", data.id);
+  //     if (response.ok && data.token) {
+  //       localStorage.setItem("auth-token", data.token);
+  //       localStorage.setItem("role", data.role);
+  //       localStorage.setItem("id", data.id);
 
-        toast.success("Google login successful");
+  //       toast.success("Google login successful");
 
-        setTimeout(() => {
-          const role = localStorage.getItem("role");
-          if (role === "admin") {
-            navigate("/adminHome");
-          } else {
-            navigate("/home");
-          }
-        }, 1000);
-      } else {
-        toast.error(data.message || "Google login failed");
-      }
-    } catch (error) {
-      toast.error("Google login error: " + error.message);
-    }
-  };
+  //       setTimeout(() => {
+  //         const role = localStorage.getItem("role");
+  //         if (role === "admin") {
+  //           navigate("/adminHome");
+  //         } else {
+  //           navigate("/home");
+  //         }
+  //       }, 1000);
+  //     } else {
+  //       toast.error(data.message || "Google login failed");
+  //     }
+  //   } catch (error) {
+  //     toast.error("Google login error: " + error.message);
+  //   }
+  // };
 
   // Handle Google login failure
-  const handleGoogleError = (error) => {
-    toast.error(error);
-  };
+  // const handleGoogleError = (error) => {
+  //   toast.error(error);
+  // };
 
   /*
         useEffect(() => {
@@ -264,10 +264,10 @@ function Login() {
                   </div>
                 </div>
 
-                <GoogleLoginButton
+                {/* <GoogleLoginButton
                   onLoginSuccess={handleGoogleSuccess}
                   onLoginError={handleGoogleError}
-                />
+                /> */}
               </div>
 
               <div className="pt-2 text-center">
