@@ -60,15 +60,6 @@ npm run build
 
 ---
 
-## 📌 Related
-
-Full stack features and backend details are documented in the **[root README](../README.md)**.
-
----
-
-## 👨‍💻 Author
-
-Developed by **[Sandun Lakshan Munasinghe](https://github.com/SandunMunasinghe20)**
 
 ```
 
